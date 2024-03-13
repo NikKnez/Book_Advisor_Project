@@ -53,7 +53,7 @@ export DB_PWD="zs9k2g7xnkdaSZo8"
 export MAIL_USR="bookrec.group1@gmail.com"
 export MAIL_PWD="botbqujrswxrlrjk"
 export API_KEY="AIzaSyDyHsr30VYe3c5TIpwIW6csd9YbCn4ynME"
-export NYT_API_KEY="AIzaSyDyHsr30VYe3c5TIpwIW6csd9YbCn4ynME"
+# export NYT_API_KEY="AIzaSyDyHsr30VYe3c5TIpwIW6csd9YbCn4ynME"
 
 # unset PYTHONHOME if set
 # this will fail if PYTHONHOME is set to the empty string (which is bad anyway)
