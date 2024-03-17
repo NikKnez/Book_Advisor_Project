@@ -39,10 +39,10 @@ def nyt_get_data():
     # Make an API call to the NYT API
     nyt_response = requests.get(
         url=base_url + "/lists/best-sellers/history.json",
-        params={"api-key": NYT_API_KEY, "isbn": isbn},
+        params={"api-key": NYT_API_KEY},
     )
 
-    # Check if book was included in an NYT best sellers list
+    # Check if book was included in an NYT bestsellers list
     results = nyt_response.json().get("results", [])
     if len(results) == 0:
         return (
@@ -94,7 +94,7 @@ def nyt_get_data_short():
         params={"api-key": NYT_API_KEY, "isbn": isbn},
     )
 
-    # Check if book was included in an NYT best sellers list
+    # Check if book was included in an NYT bestsellers list
     results = nyt_response.json().get("results", [])
     if len(results) == 0:
         return (
@@ -140,8 +140,8 @@ def nyt_get_current_recommendations():
         r
         for r in results
         if (
-            r.get("list_name", "") == "Combined Print and E-Book Fiction"
-            or r.get("list_name", "") == "Combined Print and E-Book Nonfiction"
+                r.get("list_name", "") == "Combined Print and E-Book Fiction"
+                or r.get("list_name", "") == "Combined Print and E-Book Nonfiction"
         )
     ]
     for l in results:

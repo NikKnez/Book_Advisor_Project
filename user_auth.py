@@ -72,13 +72,8 @@ Return None if id provdided does not exist
 
 def get_token_id(id):
     # Query database for user info
-    myclient = pymongo.MongoClient(
-        "mongodb+srv://"
-        + os.getenv("DB_USR")
-        + ":"
-        + os.getenv("DB_PWD")
-        + "@group1-db.muxufih.mongodb.net/?retryWrites=true&w=majority"
-    )
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+
     db = myclient["db"]
 
     if isinstance(id, str):

@@ -41,7 +41,7 @@ Main recommendation logic taken from: https://thecleverprogrammer.com/2022/07/19
 """
 
 
-@RECOMMENDER.route("/rec/", methods=["GET"])
+@RECOMMENDER.route("/rec", methods=["GET"])
 def gen_recomm():
     token = request.args.get("token")
 
@@ -126,7 +126,7 @@ def gen_recomm():
         book["info"] = get_book_info(book)
 
     # Calculate similarity ranking between all books
-    data = pd.DataFrame.from_dict(potential_recs)
+    data = pd.DataFrame.from_list(potential_recs)
     data = data[["title", "info", "book_id"]]
     # data = data.dropna()
 
@@ -147,6 +147,32 @@ def gen_recomm():
     book_indices = [i[0] for i in sim_scores]
 
     recs = data["book_id"].iloc[book_indices]
+
+    # List to store non-duplicate recommended books
+    non_duplicate_recs = []
+
+    for rec in recs:
+        for book in potential_recs:
+            if book["book_id"] == rec:
+                non_duplicate_recs.append(book)
+                break
+
+    # Initialize a set to store unique book titles
+    unique_titles = set()
+
+    # List to store non-duplicate recommended books
+    non_duplicate_recs_filtered = []
+
+    # Iterate through the recommended books
+    for book in non_duplicate_recs:
+        # Check if the title of the book is already in the set of unique titles
+        if book["title"] not in unique_titles:
+            # If the title is not in the set, add it to the set and append the book to the non-duplicate list
+            unique_titles.add(book["title"])
+            non_duplicate_recs_filtered.append(book)
+
+    # Update the response with the non-duplicate recommended books
+    resp = non_duplicate_recs_filtered
 
     resp = []
     for rec in recs:
