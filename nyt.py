@@ -5,8 +5,8 @@ import user_auth
 import os
 
 NYT = Blueprint("nyt", __name__)
-base_url = "https://api.nytimes.com/svc/books/v3"
-NYT_API_KEY = os.getenv("NYT_API_KEY")
+#base_url = "https://api.nytimes.com/svc/books/v3"
+#NYT_API_KEY = os.getenv("NYT_API_KEY")
 
 """
 Params: book_id
@@ -30,7 +30,7 @@ def nyt_get_data():
 
     # Check if book has ISBN
     isbn = book.get("isbn", None)
-    if isbn == None or isbn == "No ISBN":
+    if isbn is None or isbn == "No ISBN":
         return (
             jsonify({"message": "book does not have isbn: could not get NYT data"}),
             402,
@@ -38,8 +38,7 @@ def nyt_get_data():
 
     # Make an API call to the NYT API
     nyt_response = requests.get(
-        url=base_url + "/lists/best-sellers/history.json",
-        params={"api-key": NYT_API_KEY},
+        url="https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=6mz8aauAMDTc1N0xGARg0ZV301qyUGJ8"
     )
 
     # Check if book was included in an NYT bestsellers list
@@ -82,7 +81,7 @@ def nyt_get_data_short():
 
     # Check if book has ISBN
     isbn = book.get("isbn", None)
-    if isbn == None or isbn == "No ISBN":
+    if isbn is None or isbn == "No ISBN":
         return (
             jsonify({"message": "book does not have isbn: could not get NYT data"}),
             402,
@@ -90,8 +89,8 @@ def nyt_get_data_short():
 
     # Make an API call to the NYT API
     nyt_response = requests.get(
-        url=base_url + "/lists/best-sellers/history.json",
-        params={"api-key": NYT_API_KEY, "isbn": isbn},
+        url="https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=6mz8aauAMDTc1N0xGARg0ZV301qyUGJ8" + isbn
+
     )
 
     # Check if book was included in an NYT bestsellers list
@@ -131,7 +130,7 @@ def nyt_get_current_recommendations():
 
     # Make an API call to the NYT API
     nyt_response = requests.get(
-        url=base_url + "/lists/full-overview.json", params={"api-key": NYT_API_KEY}
+        url="https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=6mz8aauAMDTc1N0xGARg0ZV301qyUGJ8"
     )
     results = nyt_response.json().get("results", {}).get("lists", [])
 

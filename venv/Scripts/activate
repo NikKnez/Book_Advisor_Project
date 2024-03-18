@@ -48,10 +48,6 @@ fi
 _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/Scripts:$PATH"
 export PATH
-export DB_USR="admin"
-export DB_PWD="zs9k2g7xnkdaSZo8"
-export MAIL_USR=bookrec.group1@gmail.com
-export MAIL_PWD=Bookrec@group1
 export API_KEY=AIzaSyD2C_hROQx4bBYGMcfKrHZblOgMbkjlirA
 export NYT_API_KEY=6mz8aauAMDTc1N0xGARg0ZV301qyUGJ8
 
