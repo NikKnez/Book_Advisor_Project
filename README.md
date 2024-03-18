@@ -35,13 +35,6 @@ Book Advisor is a web application that offers personalized book recommendations 
 3. Set the `REACT_APP_API_ENDPOINT` variable in the `.env` file to the URL of the backend server (by default this is `http://127.0.0.1:5000/`).
 4. Start the development server using `npm start`.
 
-#### Production Build
-1. Navigate to the `book_advisor_frontend` (https://github.com/NikKnez/book_advisor_frontend) directory.
-2. Install dependencies using `npm install`.
-3. Set the `REACT_APP_API_ENDPOINT` variable in the `.env` file to the URL of the backend server (by default this is `http://127.0.0.1:5000/`).
-4. Create a production build using `npm run build`.
-5. Navigate to the `build` directory and start the server using `npx http-server`.
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request for any enhancements or bug fixes.
