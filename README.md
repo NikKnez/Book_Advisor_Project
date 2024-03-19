@@ -21,7 +21,7 @@ Book Advisor is a web application that offers personalized book recommendations 
 1. Navigate to the `BookAdvisor` directory.
 2. Create a virtual environment using `python -m venv .` and activate it.
 3. Install dependencies using `pip install -r requirements.txt`.
-4. Set environment variables for database credentials, mail server details, Google Books API key, and New York Times API key (https://developer.nytimes.com/).
+4. Set environment variables for database credentials, mail server details, Google Books API key (https://developers.google.com/books), and New York Times API key (https://developer.nytimes.com/).
 5. Run the Flask server using `python app.py`.
 
 ### Frontend (book_advisor_frontend)
