@@ -35,6 +35,26 @@ Book Advisor is a web application that offers personalized book recommendations 
 3. Set the `REACT_APP_API_ENDPOINT` variable in the `.env` file to the URL of the backend server (by default this is `http://127.0.0.1:5000/`).
 4. Start the development server using `npm start`.
 
+## Screenshots
+
+![Screenshot_1](frontend/src/images/Screenshot_1.png)
+
+![Screenshot_2](frontend/src/images/Screenshot_2.png)
+
+![Screenshot_3](frontend/src/images/Screenshot_3.png)
+
+![Screenshot_4](frontend/src/images/Screenshot_4.png)
+
+![Screenshot_5](frontend/src/images/Screenshot_5.png)
+
+![Screenshot_6](frontend/src/images/Screenshot_6.png)
+
+![Screenshot_7](frontend/src/images/Screenshot_7.png)
+
+![Screenshot_8](frontend/src/images/Screenshot_8.png)
+
+![Screenshot_9](frontend/src/images/Screenshot_9.png)
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request for any enhancements or bug fixes.
