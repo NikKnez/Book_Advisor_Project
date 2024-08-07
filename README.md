@@ -55,6 +55,10 @@ Book Advisor is a web application that offers personalized book recommendations 
 
 ![Screenshot_9](frontend/src/images/Screenshot_9.png)
 
+## 🌐 Live Demo
+
+[Check out the live demo](https://bookadvisor.netlify.app) of the Book Advisor.
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request for any enhancements or bug fixes.
